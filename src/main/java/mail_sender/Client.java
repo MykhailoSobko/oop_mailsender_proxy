@@ -15,7 +15,6 @@ public class Client {
 
     public Client() {
         id = ClientIDGenerator.generateID();
-        LinkedList<Integer> arr = new LinkedList<>();
     }
 
     private static class ClientIDGenerator {

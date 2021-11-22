@@ -1,4 +1,5 @@
 package mail_sender;
 
-public class Gender {
+public enum Gender {
+    MALE, FEMALE;
 }

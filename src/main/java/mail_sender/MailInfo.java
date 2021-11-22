@@ -1,10 +1,11 @@
 package mail_sender;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.HashMap;
 
-@Getter
+@AllArgsConstructor @Getter
 public class MailInfo {
     private Client client;
     private MailCode mailCode;
@@ -19,5 +20,9 @@ public class MailInfo {
             text = text.replace(key, templates.get(key));
         }
         return text;
+    }
+
+    public String getEmail() {
+        return client.getEmail();
     }
 }
