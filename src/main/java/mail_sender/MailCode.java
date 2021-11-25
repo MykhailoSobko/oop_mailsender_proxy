@@ -2,6 +2,7 @@ package mail_sender;
 
 import lombok.SneakyThrows;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -16,9 +17,12 @@ public enum MailCode {
 
     @SneakyThrows
     public String generateText() {
-        // Read file
-        // Inject client data
-        // Return text
+        try {
+            return Files.readString(Paths.get(this.filename));
+        }
+        catch (java.io.IOException exception) {
+            System.out.println("File not found!");
+        }
         return "";
     }
 }
